@@ -122,7 +122,7 @@ class MapViewController: UIViewController {
     }
     
     func reloadEventList() {
-        eventListController.fetchEvents(location: CLLocationCoordinate2D()) { [weak self] events in
+        eventListController.fetchEvents(location: mapView.projection.coordinate(for: mapView.center)) { [weak self] events in
             guard let sself = self else { return }
             p("\(sself.className) reloadEventList events=\(events)")
 
@@ -231,9 +231,11 @@ extension MapViewController : CLLocationManagerDelegate {
         
         // update camera coordinate
         mapView.camera = GMSCameraPosition.camera(withTarget: currentLocaion, zoom: mapView.camera.zoom)
+        reloadEventList()
         
         p("\(className) updatingLocation stop location=\(currentLocaion)")
         locationManager.stopUpdatingLocation()
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

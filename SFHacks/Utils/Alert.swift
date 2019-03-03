@@ -119,14 +119,14 @@ class AlertManager {
         }
     }
     
-    class func showConnectionErrorAlertCancellable(retryTask: @escaping (() -> Void), onCancelled: (() -> Void)? = nil) {
+    class func showConnectionErrorAlertCancellable(title: String, description: String, retryTask: @escaping (() -> Void), onCancelled: (() -> Void)? = nil) {
         showAlert(
-            title: localizedString("alert.connectionerror.title"),
-            description: localizedString("alert.connectionerror.retry"),
-            rightButtonTitle: localizedString("alert.connectionerror.yes"),
-            leftButtonTitle: localizedString("alert.connectionerror.no"),
-            rightButtonAction: retryTask,
-            leftButtonAction: onCancelled)
+            title: title,
+            description: description,
+            rightButtonTitle: localizedString("Cancel"),
+            leftButtonTitle: localizedString("Retry"),
+            rightButtonAction: onCancelled,
+            leftButtonAction: retryTask)
     }
     
     class func showConnectionErrorAlertWithMessage(title: String, description: String = "", retryTask: (() -> Void)? = nil) {
