@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oQ5-Le-AAg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map Browser View Controller-->
+        <scene sceneID="hab-pF-tdk">
+            <objects>
+                <viewController storyboardIdentifier="MapBrowserViewController" id="oQ5-Le-AAg" customClass="MapBrowserViewController" customModule="SFHacks" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lvk-Bg-61A"/>
+                        <viewControllerLayoutGuide type="bottom" id="QQ1-tz-Oeb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RwY-7a-00J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="628-96-RVw" userLabel="mapContainer">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="3Z4-6N-q9C" kind="embed" identifier="embedMapViewController" id="sat-1C-PLG"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fkq-Fu-mBg" userLabel="uiContainer" customClass="PassThroughView" customModule="SFHacks">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="H7J-8U-gwZ" kind="embed" identifier="embedGeneralEventViewController" id="Vji-oP-4Xe"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="628-96-RVw" firstAttribute="leading" secondItem="RwY-7a-00J" secondAttribute="leading" id="5f7-qV-YUt"/>
+                            <constraint firstAttribute="trailing" secondItem="Fkq-Fu-mBg" secondAttribute="trailing" id="7Ed-g0-o7G"/>
+                            <constraint firstItem="628-96-RVw" firstAttribute="top" secondItem="RwY-7a-00J" secondAttribute="top" id="GM0-Z6-Mtw"/>
+                            <constraint firstItem="Fkq-Fu-mBg" firstAttribute="top" secondItem="RwY-7a-00J" secondAttribute="top" id="HEv-jr-mKI"/>
+                            <constraint firstAttribute="trailing" secondItem="628-96-RVw" secondAttribute="trailing" id="Of7-ws-bdk"/>
+                            <constraint firstAttribute="bottom" secondItem="628-96-RVw" secondAttribute="bottom" id="gc5-ED-m7t"/>
+                            <constraint firstAttribute="bottom" secondItem="Fkq-Fu-mBg" secondAttribute="bottom" id="uqC-FU-Cq5"/>
+                            <constraint firstItem="Fkq-Fu-mBg" firstAttribute="leading" secondItem="RwY-7a-00J" secondAttribute="leading" id="vJA-VR-uim"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mp0-4l-dnb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fq0-8C-hSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="71" y="118"/>
+        </scene>
+        <!--MapViewController-->
+        <scene sceneID="LUY-ue-kY6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MapViewController" referencedIdentifier="MapViewController" id="3Z4-6N-q9C" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A2u-5j-0Pk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="762" y="67"/>
+        </scene>
+        <!--GeneralEventViewController-->
+        <scene sceneID="izw-p0-ytR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GeneralEventViewController" referencedIdentifier="GeneralEventViewController" id="H7J-8U-gwZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b2l-Pf-VHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="719" y="178"/>
+        </scene>
+    </scenes>
+</document>

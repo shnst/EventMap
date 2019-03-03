@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MarkerView" customModule="EventMap" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="34" height="48"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yLx-5Q-Idp">
+                    <rect key="frame" x="0.0" y="0.0" width="34" height="48"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map.marker.commerce" translatesAutoresizingMaskIntoConstraints="NO" id="KYg-hr-K1U">
+                            <rect key="frame" x="0.0" y="0.0" width="34" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="KYg-hr-K1U" secondAttribute="height" multiplier="34:48" id="JhV-RD-kTV"/>
+                                <constraint firstAttribute="width" constant="34" id="u2U-E7-Sla"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rRG-e4-2bn">
+                            <rect key="frame" x="7" y="8" width="20" height="20.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="rRG-e4-2bn" secondAttribute="height" multiplier="1:1" id="FfU-pD-Lpb"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="rRG-e4-2bn" firstAttribute="width" secondItem="KYg-hr-K1U" secondAttribute="width" multiplier="36:61" id="2gi-dY-4uH"/>
+                        <constraint firstAttribute="trailing" secondItem="KYg-hr-K1U" secondAttribute="trailing" id="a6a-45-ay5"/>
+                        <constraint firstItem="KYg-hr-K1U" firstAttribute="top" secondItem="yLx-5Q-Idp" secondAttribute="top" id="hhq-ov-2y5"/>
+                        <constraint firstItem="rRG-e4-2bn" firstAttribute="centerX" secondItem="yLx-5Q-Idp" secondAttribute="centerX" id="jF6-Jg-ipg"/>
+                        <constraint firstItem="KYg-hr-K1U" firstAttribute="leading" secondItem="yLx-5Q-Idp" secondAttribute="leading" id="jXo-gW-Nev"/>
+                        <constraint firstItem="rRG-e4-2bn" firstAttribute="top" secondItem="yLx-5Q-Idp" secondAttribute="top" constant="8" id="v93-Ol-biL"/>
+                        <constraint firstAttribute="bottom" secondItem="KYg-hr-K1U" secondAttribute="bottom" id="xcV-EM-gZx"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="yLx-5Q-Idp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="4pb-Xi-oxI"/>
+                <constraint firstItem="yLx-5Q-Idp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Wmr-o5-P6E"/>
+                <constraint firstAttribute="trailing" secondItem="yLx-5Q-Idp" secondAttribute="trailing" id="ghq-Xs-9W0"/>
+                <constraint firstAttribute="bottom" secondItem="yLx-5Q-Idp" secondAttribute="bottom" id="k3N-S0-IHm"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="eventGenreImageView" destination="rRG-e4-2bn" id="nZL-WV-voV"/>
+                <outlet property="markerImageView" destination="rRG-e4-2bn" id="ViY-7u-J1i"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="map.marker.commerce" width="61" height="88"/>
+    </resources>
+</document>
