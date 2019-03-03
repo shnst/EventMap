@@ -36,6 +36,7 @@ class MapViewController: UIViewController {
 
         setupMap()
         setCameraToSelfLocation()
+        searchBarView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,6 +47,17 @@ class MapViewController: UIViewController {
             setupSearchBar()
         }
     }
+    
+    func searchBarView() {
+        self.searchBarContainer.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.91)
+        self.searchBarContainer.layer.opacity = 5
+        self.searchBarContainer.layer.shadowColor = UIColor.gray.cgColor
+        self.searchBarContainer.layer.shadowRadius = 20
+        self.searchBarContainer.layer.shadowOffset = CGSize(width: 3, height: 10)
+        self.searchBarContainer.layer.cornerRadius = 18
+        
+    }
+
     
     func setup(
         eventListController: EventListController,
@@ -151,11 +163,21 @@ class MapViewController: UIViewController {
         searchController?.searchBar.frame.origin = CGPoint(x: 0, y: 0)
         searchController?.searchBar.searchBarStyle = .minimal
         searchController?.hidesNavigationBarDuringPresentation = false
+        searchController?.searchBar.showsCancelButton = false
+        searchController?.searchBar.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.91)
+        searchController?.searchBar.layer.opacity = 2
+        searchController?.searchBar.layer.shadowColor = UIColor.gray.cgColor
+        searchController?.searchBar.layer.shadowRadius = 6
+        searchController?.searchBar.layer.shadowOffset = CGSize(width: 3, height: 10)
+        searchController?.searchBar.layer.cornerRadius = 18
+        searchController?.searchBar.placeholder = "Find Events"
+
         
         // When UISearchController presents the results view, present it in
         // this view controller, not one further up the chain.
         definesPresentationContext = true
     }
+  
 }
 
 extension MapViewController: UISearchControllerDelegate {
@@ -272,3 +294,7 @@ extension MapViewController: GMSAutocompleteResultsViewControllerDelegate {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }
+
+
+
+

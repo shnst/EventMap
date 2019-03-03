@@ -152,7 +152,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flB-Yj-9kG" userLabel="beforeStartingPeriodContainer">
                                                 <rect key="frame" x="103.5" y="1" width="124" height="28"/>
                                                 <subviews>
-                                                    <view opaque="NO" clipsSubviews="YES" alpha="0.090000003576278687" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3q-Pv-aoa" customClass="IBDesignableProportionalView" customModule="EventMap" customModuleProvider="target">
+                                                    <view opaque="NO" clipsSubviews="YES" alpha="0.090000003576278687" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r3q-Pv-aoa" customClass="IBDesignableProportionalView" customModule="SFHacks" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="124" height="28"/>
                                                         <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
@@ -213,7 +213,7 @@
                                                     <constraint firstItem="r3q-Pv-aoa" firstAttribute="leading" secondItem="flB-Yj-9kG" secondAttribute="leading" id="wRD-5n-BYl"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xpp-yl-Y6A" userLabel="afterStartingPeriodContainer" customClass="RemainingTimeView" customModule="EventMap" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xpp-yl-Y6A" userLabel="afterStartingPeriodContainer" customClass="RemainingTimeView" customModule="SFHacks" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="331" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
