@@ -1,7 +1,7 @@
 # EventMap
 
-![img1](https://i.imgur.com/HnA9jaT.png)
-![img1](https://i.imgur.com/IXF75uI.png)
+![img1](https://i.imgur.com/HnA9jaT.png?1)
+![img1](https://i.imgur.com/IXF75uI.png?1)
 
 Every time when you go on to event finder like EventBrite , all you usually see is either famous concerts happening or some 
 
