@@ -13,24 +13,21 @@ class EventInfoViewController: UIViewController {
     fileprivate var event: EntityEvent!
     fileprivate var onClosed: (() -> Void)!
     
-//    fileprivate var eventsUseCase = EventsUseCase()
     fileprivate var controller = EventController()
     
     @IBOutlet private weak var eventNameLabel: UILabel!
-    @IBOutlet private weak var promotionLabel: UILabel!
-    @IBOutlet fileprivate weak var photoCollectionView: UICollectionView!
+    
+    @IBOutlet private weak var descriptionTextView: UITextView!
+    
     @IBOutlet fileprivate weak var visitorsCollectionView: UICollectionView!
     
     @IBOutlet fileprivate weak var beforeStartingPeriodContainer: UIView!
 //    @IBOutlet fileprivate weak var afterStartingPeriodContainer: RemainingTimeView!
-    
-    @IBOutlet fileprivate weak var wishlistButton: UIButton!
+    @IBOutlet fileprivate weak var eventImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        setupPhotoCollectionView()
         setupVisitorsCollectionView()
     }
     
@@ -48,36 +45,33 @@ class EventInfoViewController: UIViewController {
             success: { [weak self] event in
                 guard let sself = self else { return }
                 sself.event = event
-                sself.updateUI()
+                DispatchQueue.main.async { [weak self] in
+                    guard let sself = self else { return }
+                    sself.updateUI()
+                }
             },
             failure: {
                 AlertManager.showConnectionErrorAlert { [weak self] in
-                    guard let sself = self else { return }
-                    sself.fetchLatestEventInformation()
+                    DispatchQueue.main.async { [weak self] in
+                        guard let sself = self else { return }
+                        sself.fetchLatestEventInformation()
+                    }
                 }
         })
     }
     
-    private func setupPhotoCollectionView() {
-//        photoCollectionView.registerCell(EventPhotoCollectionViewCell.self)
-//        let flowLayout = photoCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-//        flowLayout.estimatedItemSize = CGSize(width: 106, height: 61)
-    }
-    
     private func setupVisitorsCollectionView() {
-        visitorsCollectionView.registerCell(ProfileCollectionViewCell.self)
-        let flowLayout = visitorsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        flowLayout.estimatedItemSize = CGSize(width: 36, height: 36)
+//        visitorsCollectionView.registerCell(ProfileCollectionViewCell.self)
+//        let flowLayout = visitorsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+//        flowLayout.estimatedItemSize = CGSize(width: 36, height: 36)
     }
     
     private func updateUI() {
-        eventNameLabel.text = event.name
-        promotionLabel.text = event.description1
-        
-        photoCollectionView.reloadData()
-        visitorsCollectionView.reloadData()
-        
-//        afterStartingPeriodContainer.setup(startDate: event.startDate, endDate: event.endDate)
+//        eventNameLabel.text = event.name
+//        descriptionTextView.text = event.description1
+//
+//        eventImageView.image = event.images.first?.image
+//        visitorsCollectionView.reloadData()
     }
     
     private func joinEvent() {

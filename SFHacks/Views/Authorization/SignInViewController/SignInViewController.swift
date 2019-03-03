@@ -47,7 +47,7 @@ class SignInViewController: UIViewController {
         },
             failure: { [weak self] in
                 SVProgressHUD.dismiss()
-                showAlertWithoutCancel(title: "ログインに失敗しました。", description: "")
+                showAlertWithoutCancel(title: "Failed to login.", description: "")
                 //                AlertManager.showConnectionErrorAlertCancellable(retryTask: { [weak self] in
                 //                    guard let sself = self else { return }
                 //                    sself.signIn()

@@ -66,6 +66,33 @@ class GeneralEventViewController: UIViewController {
             })
             break
         case Segue.seeInformation.rawValue:
+            let vc = segue.destination as! EventWindowViewController
+            
+            guard let coordinate = selectedEvent?.coordinate else { return }
+            let clLocationCoordinate = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+            MapAccessor.getMap()?.getAddress(coordinate: clLocationCoordinate) { address in
+                guard address != nil else { return }
+                vc.setAddress(address: address!)
+            }
+            
+            // to instantiate view before manipulating it
+            _ = vc.view
+            
+            guard let event = selectedEvent else { return }
+            let eventInfoViewController = EventInfoViewController.instantiate()
+            _ = eventInfoViewController.view
+            eventInfoViewController.setup(
+                event: event,
+                onClosed: { [unowned self] in
+                    UIView.animate(withDuration: 0.5, animations: { [unowned self] in
+                        self.tabbarContainer.alpha = 1.0
+                    })
+            })
+            vc.setup(vc: eventInfoViewController, category: localizedString("Shops & Restaurants"))
+            
+            UIView.animate(withDuration: 0.5, animations: { [unowned self] in
+                self.tabbarContainer.alpha = 0.0
+            })
             break
         default:
             break
