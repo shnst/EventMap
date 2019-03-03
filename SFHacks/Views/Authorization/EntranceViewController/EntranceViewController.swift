@@ -87,9 +87,12 @@ class EntranceViewController: UIViewController {
         },
             failure: { [weak self] in
                 SVProgressHUD.dismiss()
-                AlertManager.showConnectionErrorAlertCancellable(retryTask: { [weak self] in
-                    guard let sself = self else { return }
-                    sself.signUp()
+                AlertManager.showConnectionErrorAlertCancellable(
+                    title: localizedString("Failed to sign up."),
+                    description: localizedString(""),
+                    retryTask: { [weak self] in
+                        guard let sself = self else { return }
+                        sself.signUp()
                 })
         })
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4BF84EEBFDF628A6C88D0F80 /* Pods_SFHacks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A7437B057260C3D8CBFCC1 /* Pods_SFHacks.framework */; };
+		B128EB31222C35DD00280976 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B128EB30222C35DD00280976 /* TriangleView.swift */; };
 		B142954E222B3B4B008871D0 /* EventGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = B142954A222B3B4B008871D0 /* EventGenre.swift */; };
 		B142954F222B3B4B008871D0 /* EventFilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B142954B222B3B4B008871D0 /* EventFilterType.swift */; };
 		B1429550222B3B4B008871D0 /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B142954C222B3B4B008871D0 /* EventType.swift */; };
@@ -72,6 +73,7 @@
 		50C063072F6A393C5C6B1350 /* Pods-SFHacks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFHacks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SFHacks/Pods-SFHacks.debug.xcconfig"; sourceTree = "<group>"; };
 		9B33A5CBA6A96843B63A7EA4 /* Pods-SFHacks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFHacks.release.xcconfig"; path = "Pods/Target Support Files/Pods-SFHacks/Pods-SFHacks.release.xcconfig"; sourceTree = "<group>"; };
 		A1A7437B057260C3D8CBFCC1 /* Pods_SFHacks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SFHacks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B128EB30222C35DD00280976 /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
 		B142954A222B3B4B008871D0 /* EventGenre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventGenre.swift; sourceTree = "<group>"; };
 		B142954B222B3B4B008871D0 /* EventFilterType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFilterType.swift; sourceTree = "<group>"; };
 		B142954C222B3B4B008871D0 /* EventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventType.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				B16E6407222B248B00788B3E /* Util.swift */,
 				B1429567222B57E2008871D0 /* Alert.swift */,
 				B1429576222B6DC1008871D0 /* IBDesignableView.swift */,
+				B128EB30222C35DD00280976 /* TriangleView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				B16E644B222B34E900788B3E /* RequestUsersUpdateProfile.swift in Sources */,
 				B16E643B222B34E200788B3E /* RequestEventsRegisterGeneral.swift in Sources */,
 				B1429550222B3B4B008871D0 /* EventType.swift in Sources */,
+				B128EB31222C35DD00280976 /* TriangleView.swift in Sources */,
 				B1429577222B6DC1008871D0 /* IBDesignableView.swift in Sources */,
 				B16E643F222B34E200788B3E /* RequestEventsFetch.swift in Sources */,
 				B1429558222B3DC3008871D0 /* GeneralEventViewController.swift in Sources */,

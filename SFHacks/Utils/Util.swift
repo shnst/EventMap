@@ -15,6 +15,32 @@ func p<T>(_ object: T) {
     #endif
 }
 
+func convertToDictionary(text: String) -> [String: Any]? {
+    if let data = text.data(using: .utf8) {
+        do {
+            return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    return nil
+}
+
+func extractErrorMessageFromResponse(response: Alamofire.DataResponse<Any>) -> String {
+    var message: String = ""
+    if let data = response.data {
+        let json = String(data: data, encoding: String.Encoding.utf8)
+        
+        if json != nil {
+            message += json!
+        }
+    }
+    if let messageDictionary = convertToDictionary(text: message), let errorMessage = messageDictionary["errors"] as? String {
+        return errorMessage
+    }
+    return ""
+}
+
 func pAPIError(_ apiName: String, response: Alamofire.DataResponse<Any>) {
     #if DEBUG
         // show only error responses
@@ -22,15 +48,7 @@ func pAPIError(_ apiName: String, response: Alamofire.DataResponse<Any>) {
         //            return
         //        }
         let statusCode: String = "\(String(describing: response.response?.statusCode))"
-        var errorMessage: String = ""
-        if let data = response.data {
-            let json = String(data: data, encoding: String.Encoding.utf8)
-
-            if json != nil {
-                errorMessage += json!
-            }
-        }
-        print("API=\(apiName) statusCode=\(statusCode)  responseMessage=\(errorMessage)")
+        print("API=\(apiName) statusCode=\(statusCode)  responseMessage=\(extractErrorMessageFromResponse(response: response))")
     #endif
 }
 

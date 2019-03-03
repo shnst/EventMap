@@ -9,14 +9,14 @@
 import Foundation
 
 class EventController {
-    func join(eventID: Int, success: @escaping (() -> Void), failure: @escaping ((HTTPURLResponse?) -> Void)) {
+    func join(eventID: Int, success: @escaping (() -> Void), failure: @escaping ((HTTPURLResponse?, String) -> Void)) {
         let request = RequestEventsJoin(eventID: eventID)
         APIClient.request(request: request).success { response in
             success()
             }.failure { error in
                 switch error.error! {
-                case .error(let response):
-                    failure(response)
+                case .error(let httpResponse, let errorMessage):
+                    failure(httpResponse, errorMessage)
                 }
         }
     }

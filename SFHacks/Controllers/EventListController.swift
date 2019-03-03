@@ -38,14 +38,18 @@ class EventListController {
             completion()
             }.failure{ error in
                 SVProgressHUD.dismiss()
-                AlertManager.showConnectionErrorAlertCancellable(retryTask: { [weak self] in
-                    guard let sself = self else { return }
-                    sself.registerEvent(event: event, completion: completion)
+                AlertManager.showConnectionErrorAlertCancellable(
+                    title: localizedString("Failed to register the event."),
+                    description: localizedString(""),
+                    retryTask: { [weak self] in
+                        guard let sself = self else { return }
+                        sself.registerEvent(event: event, completion: completion)
                 })
         }
     }
     
     func fetchEvents(location: CLLocationCoordinate2D, completion: @escaping ((_ events: [EntityEvent]) -> Void)) {
+        p("EventListController::fetchEvents longitude=\(location.longitude) latitude=\(location.latitude)")
         SVProgressHUD.show()
         let request = RequestEventsFetchAround(
             longitude: location.longitude,
@@ -55,7 +59,9 @@ class EventListController {
             SVProgressHUD.dismiss()
             p("EventDataStoreImpl registerEvent response=\(String(describing: response))")
             let realm = try! Realm()
+//            let existingEvents = realm.objects(EntityEvent.self)
             try! realm.write {
+//                realm.delete(existingEvents)
                 for event in response!.events {
                     realm.add(event, update: true)
                 }
@@ -64,11 +70,14 @@ class EventListController {
             completion(Array(realm.objects(EntityEvent.self)))
             }.failure{ error in
                 SVProgressHUD.dismiss()
-                AlertManager.showConnectionErrorAlertCancellable(retryTask: { [weak self] in
-                    guard let sself = self else { return }
-                    sself.fetchEvents(
-                        location: location,
-                        completion: completion)
+                AlertManager.showConnectionErrorAlertCancellable(
+                    title: localizedString("Failed to fetch events."),
+                    description: localizedString(""),
+                    retryTask: { [weak self] in
+                        guard let sself = self else { return }
+                        sself.fetchEvents(
+                            location: location,
+                            completion: completion)
                 })
         }
     }

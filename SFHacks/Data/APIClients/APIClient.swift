@@ -10,7 +10,7 @@ import Alamofire
 import SwiftTask
 
 public enum APIError : Error {
-    case error(HTTPURLResponse?)
+    case error(HTTPURLResponse?, String)
 }
 
 struct APIClient {
@@ -44,7 +44,7 @@ struct APIClient {
                                     fulfill(nil)
                                     return
                                 }
-                                reject(.error(response.response))
+                                reject(.error(response.response, extractErrorMessageFromResponse(response: response)))
                                 return
                             }
                             fulfill(model)
@@ -55,11 +55,11 @@ struct APIClient {
                             fulfill(nil)
                             return
                         }
-                        reject(.error(response.response))
+                        reject(.error(response.response, extractErrorMessageFromResponse(response: response)))
                         return
                     }
                     // failure
-                    reject(.error(response.response))
+                    reject(.error(response.response, extractErrorMessageFromResponse(response: response)))
                 })
             
             print(req)

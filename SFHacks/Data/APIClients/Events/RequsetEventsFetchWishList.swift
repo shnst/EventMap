@@ -36,7 +36,6 @@ extension RequestEventsFetchWishList {
         guard let array = object as? NSArray else {
             return Response(events: [EntityEvent]())
         }
-        
 //        guard let objects = Mapper<EntityEvent>().mapArray(JSONArray: array as! [[String : Any]]) else {
 //            return Response(events: [EntityEvent]())
 //        }

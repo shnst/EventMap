@@ -100,10 +100,11 @@ class EventInfoViewController: UIViewController {
                     sself.onClosed()
                 })
             },
-            failure: { error in
+            failure: { httpResponse, errorMessage in
                 SVProgressHUD.dismiss()
-                AlertManager.showConnectionErrorAlertWithMessage(
-                    title: error != nil ? error!.description : localizedString("通信エラー"),
+                AlertManager.showConnectionErrorAlertCancellable(
+                    title: localizedString("Failed to join the event."),
+                    description: errorMessage,
                     retryTask: { [weak self] in
                         guard let sself = self else { return }
                         sself.joinEvent()

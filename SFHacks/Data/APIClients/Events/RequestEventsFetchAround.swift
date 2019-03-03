@@ -21,7 +21,7 @@ struct RequestEventsFetchAround : CustomRequest {
     }
     
     var path : String {
-        return "events/api/fetch_all/"
+        return "events/api/fetch_around/"
     }
     
     var parameters : [String : AnyObject] {
