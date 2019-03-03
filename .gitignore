@@ -1,0 +1,18 @@
+# xcodeproj
+!*.xcodeproj/
+*.xcodeproj/*
+!*.xcodeproj/xcshareddata
+*.xcodeproj/xcshareddata/*
+!*.xcodeproj/xcshareddata/xcschemes/
+!*.xcodeproj/project.pbxproj
+
+*.xcworkspace
+
+
+.DS_Store
+tt-ios/Pods/*
+#*.mobileprovision
+*.ipa
+*.dSYM.zip
+*.mobileprovision
+Pods/*
