@@ -89,10 +89,18 @@
                                                     <constraint firstAttribute="height" constant="60" id="z2K-pH-UYD"/>
                                                 </constraints>
                                             </imageView>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXp-Bs-XRi">
+                                                <rect key="frame" x="128.5" y="27.5" width="74" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="7Dd-a6-4Zi" firstAttribute="leading" secondItem="XPs-LJ-Qin" secondAttribute="leading" id="5vf-Y0-2Bz"/>
+                                            <constraint firstItem="iXp-Bs-XRi" firstAttribute="centerX" secondItem="XPs-LJ-Qin" secondAttribute="centerX" id="FC9-h6-izj"/>
+                                            <constraint firstItem="iXp-Bs-XRi" firstAttribute="centerY" secondItem="XPs-LJ-Qin" secondAttribute="centerY" id="H4o-bU-KmL"/>
                                             <constraint firstItem="DI0-Sy-7fR" firstAttribute="top" secondItem="7Dd-a6-4Zi" secondAttribute="bottom" id="LbJ-yO-wlP"/>
                                             <constraint firstAttribute="bottom" secondItem="DI0-Sy-7fR" secondAttribute="bottom" id="NkK-K9-XEm"/>
                                             <constraint firstAttribute="trailing" secondItem="7Dd-a6-4Zi" secondAttribute="trailing" id="Vm2-bH-pdA"/>
@@ -128,7 +136,7 @@
                                                 </connections>
                                             </collectionView>
                                         </subviews>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="953-kL-xns" firstAttribute="top" secondItem="du3-8o-xMe" secondAttribute="bottom" id="0QI-0e-qmN"/>
                                             <constraint firstAttribute="trailing" secondItem="953-kL-xns" secondAttribute="trailing" id="ABS-vv-HtR"/>
@@ -314,6 +322,7 @@
                         <outlet property="endDate" destination="0ZM-g9-9kv" id="N2Z-UK-KK9"/>
                         <outlet property="eventImageView" destination="DI0-Sy-7fR" id="uAp-1z-vDa"/>
                         <outlet property="eventNameLabel" destination="zfV-TX-yLe" id="fjK-yH-mSB"/>
+                        <outlet property="noImageLabel" destination="iXp-Bs-XRi" id="8JG-VT-ouZ"/>
                         <outlet property="startDate" destination="z7S-pf-3lX" id="qNy-88-V4W"/>
                         <outlet property="visitorsCollectionView" destination="953-kL-xns" id="eKx-VI-lBc"/>
                     </connections>

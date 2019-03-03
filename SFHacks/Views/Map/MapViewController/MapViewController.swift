@@ -118,6 +118,8 @@ class MapViewController: UIViewController {
         let destinationScreenCenter = CGPoint(x: screenCoordinate.x, y: screenCoordinate.y - (view.frame.height / 2 - 20))
         let location = mapView.projection.coordinate(for: destinationScreenCenter)
         mapView.animate(toLocation: location)
+        p("zoom=\(mapView.camera.zoom)")
+        
         onCameraAnimationFinished = completion
     }
     
@@ -154,10 +156,6 @@ class MapViewController: UIViewController {
         
         searchBarContainer.addSubview((searchController?.searchBar)!)
         
-//        let widthConstraint = NSLayoutConstraint(item: searchController!.searchBar, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: searchBarContainer.frame.width)
-//        let heightConstraint = NSLayoutConstraint(item: searchController!.searchBar, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: searchBarContainer.frame.height)
-//        searchController!.searchBar.addConstraints([widthConstraint, heightConstraint])
-        
         searchController?.searchBar.sizeToFit()
         searchController?.searchBar.frame.size = searchBarContainer.frame.size
         searchController?.searchBar.frame.origin = CGPoint(x: 0, y: 0)
@@ -172,7 +170,6 @@ class MapViewController: UIViewController {
         searchController?.searchBar.layer.cornerRadius = 18
         searchController?.searchBar.placeholder = "Find Events"
 
-        
         // When UISearchController presents the results view, present it in
         // this view controller, not one further up the chain.
         definesPresentationContext = true
@@ -208,9 +205,10 @@ extension MapViewController: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        moveCamera(screenCoordinate: mapView.projection.point(for: marker.position)) { [unowned self] in
+        moveCamera(screenCoordinate: mapView.projection.point(for: marker.position)) { [weak self] in
+            guard let sself = self else { return }
             guard let markerView = marker.iconView as? MarkerView else { return }
-            self.onMarkerTapped(markerView.event)
+            sself.onMarkerTapped(markerView.event)
         }
         return true
     }
@@ -235,7 +233,6 @@ extension MapViewController : CLLocationManagerDelegate {
         
         p("\(className) updatingLocation stop location=\(currentLocaion)")
         locationManager.stopUpdatingLocation()
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {

@@ -84,6 +84,7 @@ class GeneralEventViewController: UIViewController {
             eventInfoViewController.setup(
                 event: event,
                 onClosed: { [unowned self] in
+                    MapAccessor.getMap()?.reloadEventList()
                     UIView.animate(withDuration: 0.5, animations: { [unowned self] in
                         self.tabbarContainer.alpha = 1.0
                     })

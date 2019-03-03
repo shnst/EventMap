@@ -22,6 +22,7 @@ class EventInfoViewController: UIViewController {
     @IBOutlet fileprivate weak var visitorsCollectionView: UICollectionView!
     
     @IBOutlet fileprivate weak var eventImageView: UIImageView!
+    @IBOutlet weak var noImageLabel: UILabel!
     
     @IBOutlet fileprivate weak var startDate: UILabel!
     @IBOutlet fileprivate weak var endDate: UILabel!
@@ -75,10 +76,15 @@ class EventInfoViewController: UIViewController {
         eventNameLabel.text = event.name
         descriptionTextView.text = event.description1
 
-        if !eventImageDownloadStarted, let imageUrl = event.images.first?.url {
-            eventImageDownloadStarted = true
-            eventImageView.downloaded(from: imageUrl)
-            p("aaa=\(imageUrl)")
+        
+        if let imageUrl = event.images.first?.url {
+            noImageLabel.isHidden = true
+            if !eventImageDownloadStarted {
+                eventImageDownloadStarted = true
+                eventImageView.downloaded(from: imageUrl)
+            }
+        } else {
+            noImageLabel.isHidden = false
         }
         
         let dateFormatterPrint = DateFormatter()
