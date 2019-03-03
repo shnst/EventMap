@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SFHacks/Views/Map/EventWindows/EventInfoViewController/EventInfoViewController.swift"
-            timestampString = "573300955.27017"
+            timestampString = "573301174.0721509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "createVisitorsCollectionViewCell(collectionView:indexPath:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SFHacks/Views/Map/EventWindows/RegisterEventViewController/RegisterEventViewController.swift"
-            timestampString = "573293440.073542"
+            timestampString = "573301174.0725631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"

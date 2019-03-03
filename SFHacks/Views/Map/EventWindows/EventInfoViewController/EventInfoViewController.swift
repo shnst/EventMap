@@ -24,6 +24,8 @@ class EventInfoViewController: UIViewController {
     @IBOutlet fileprivate weak var beforeStartingPeriodContainer: UIView!
     @IBOutlet fileprivate weak var eventImageView: UIImageView!
     
+    fileprivate var eventImageDownloadStarted: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,7 +71,8 @@ class EventInfoViewController: UIViewController {
         eventNameLabel.text = event.name
         descriptionTextView.text = event.description1
 
-        if let imageUrl = event.images.first?.url {
+        if !eventImageDownloadStarted, let imageUrl = event.images.first?.url {
+            eventImageDownloadStarted = true
             eventImageView.downloaded(from: imageUrl)
             p("aaa=\(imageUrl)")
         }
