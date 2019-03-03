@@ -14,7 +14,6 @@ class MapViewController: UIViewController {
     @IBOutlet private weak var mapView: GMSMapView!
     @IBOutlet private weak var searchBarContainer: UIView!
     
-    
     //緯度経度 -> 金沢駅
     private let latitude: CLLocationDegrees = 35.691638
     private let longitude: CLLocationDegrees = 139.704616

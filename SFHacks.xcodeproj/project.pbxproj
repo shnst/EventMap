@@ -29,6 +29,9 @@
 		B142957B222B6E2A008871D0 /* DatePickerButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1429579222B6E2A008871D0 /* DatePickerButton.xib */; };
 		B142957C222B6E2A008871D0 /* DatePickerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B142957A222B6E2A008871D0 /* DatePickerButton.swift */; };
 		B142957E222B6FD3008871D0 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B142957D222B6FD3008871D0 /* ProfileController.swift */; };
+		B1429580222B86A4008871D0 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B142957F222B86A4008871D0 /* EventController.swift */; };
+		B1429584222B89F8008871D0 /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1429582222B89F8008871D0 /* ProfileCollectionViewCell.xib */; };
+		B1429585222B89F8008871D0 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1429583222B89F8008871D0 /* ProfileCollectionViewCell.swift */; };
 		B16E63DE222B1A8700788B3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16E63DD222B1A8700788B3E /* AppDelegate.swift */; };
 		B16E63E5222B1A8A00788B3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16E63E4222B1A8A00788B3E /* Assets.xcassets */; };
 		B16E63F3222B1C8800788B3E /* EntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16E63F2222B1C8800788B3E /* EntranceViewController.swift */; };
@@ -94,6 +97,9 @@
 		B1429579222B6E2A008871D0 /* DatePickerButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerButton.xib; sourceTree = "<group>"; };
 		B142957A222B6E2A008871D0 /* DatePickerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerButton.swift; sourceTree = "<group>"; };
 		B142957D222B6FD3008871D0 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		B142957F222B86A4008871D0 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
+		B1429582222B89F8008871D0 /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
+		B1429583222B89F8008871D0 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		B16E63DA222B1A8700788B3E /* SFHacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFHacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16E63DD222B1A8700788B3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B16E63E4222B1A8A00788B3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -219,6 +225,7 @@
 				B1429565222B4223008871D0 /* EventListController.swift */,
 				B1429569222B5C69008871D0 /* AuthenticationController.swift */,
 				B142957D222B6FD3008871D0 /* ProfileController.swift */,
+				B142957F222B86A4008871D0 /* EventController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -239,6 +246,15 @@
 				B1429579222B6E2A008871D0 /* DatePickerButton.xib */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		B1429581222B8917008871D0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B1429583222B89F8008871D0 /* ProfileCollectionViewCell.swift */,
+				B1429582222B89F8008871D0 /* ProfileCollectionViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		B16E63D1222B1A8600788B3E = {
@@ -360,6 +376,7 @@
 		B16E6419222B300700788B3E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B1429581222B8917008871D0 /* Cells */,
 				B1429578222B6DED008871D0 /* UIComponents */,
 				B16E6418222B2FFA00788B3E /* Authorization */,
 				B16E6417222B2FB400788B3E /* Map */,
@@ -505,6 +522,7 @@
 				B16E641E222B304300788B3E /* MarkerView.xib in Resources */,
 				B1429555222B3CE3008871D0 /* MapBrowserViewController.storyboard in Resources */,
 				B16E63F5222B1C9800788B3E /* EntranceViewController.storyboard in Resources */,
+				B1429584222B89F8008871D0 /* ProfileCollectionViewCell.xib in Resources */,
 				B16E63E5222B1A8A00788B3E /* Assets.xcassets in Resources */,
 				B16E63FE222B1EEC00788B3E /* SignUpViewController.storyboard in Resources */,
 				B16E6403222B1FAD00788B3E /* MapViewController.storyboard in Resources */,
@@ -623,11 +641,13 @@
 				B142956A222B5C69008871D0 /* AuthenticationController.swift in Sources */,
 				B142954F222B3B4B008871D0 /* EventFilterType.swift in Sources */,
 				B16E63DE222B1A8700788B3E /* AppDelegate.swift in Sources */,
+				B1429585222B89F8008871D0 /* ProfileCollectionViewCell.swift in Sources */,
 				B16E6449222B34E900788B3E /* RequestUsersSignInEmail.swift in Sources */,
 				B16E643D222B34E200788B3E /* RequestEventsRemoveFromWishList.swift in Sources */,
 				B16E643E222B34E200788B3E /* RequsetEventsUploadImages.swift in Sources */,
 				B16E641D222B304300788B3E /* MarkerView.swift in Sources */,
 				B142954E222B3B4B008871D0 /* EventGenre.swift in Sources */,
+				B1429580222B86A4008871D0 /* EventController.swift in Sources */,
 				B16E63FC222B1EBC00788B3E /* SignUpViewController.swift in Sources */,
 				B1429560222B4059008871D0 /* EventWindowViewController.swift in Sources */,
 				B1429563222B41E1008871D0 /* MapAccessor.swift in Sources */,

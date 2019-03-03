@@ -47,4 +47,10 @@ class EventWindowViewController: UIViewController {
         addChild(vc)
         vc.didMove(toParent: self)
     }
+    
+    @IBAction func onBackgroundTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: { [unowned self] in
+        })
+    }
+    
 }

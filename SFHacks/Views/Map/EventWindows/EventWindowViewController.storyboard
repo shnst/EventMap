@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Event Window View Controller-->
         <scene sceneID="qCC-KR-LXT">
             <objects>
-                <viewController storyboardIdentifier="EventWindowViewController" id="8G8-yw-Oco" customClass="EventWindowViewController" customModule="EventMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventWindowViewController" id="8G8-yw-Oco" customClass="EventWindowViewController" customModule="SFHacks" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ggc-7v-AZm"/>
                         <viewControllerLayoutGuide type="bottom" id="h1h-Ma-vIi"/>
@@ -28,7 +25,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A8C-D0-C11" userLabel="locationBalloonContainer" customClass="IBDesignableProportionalView" customModule="EventMap" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2s-ZG-4uZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onBackgroundTapped:" destination="8G8-yw-Oco" eventType="touchUpInside" id="tu6-92-x7p"/>
+                                </connections>
+                            </button>
+                            <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A8C-D0-C11" userLabel="locationBalloonContainer" customClass="IBDesignableProportionalView" customModule="SFHacks" customModuleProvider="target">
                                 <rect key="frame" x="30.5" y="43" width="314.5" height="27"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34 Mason St, San Francisco, CA 94102, USA" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAw-rs-EHo">
@@ -46,11 +50,11 @@
                                     <constraint firstItem="zAw-rs-EHo" firstAttribute="leading" secondItem="A8C-D0-C11" secondAttribute="leading" constant="30" id="zp1-Ik-j2i"/>
                                 </constraints>
                             </view>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uf3-rw-05r" userLabel="registrationFormBalloonContainer" customClass="IBDesignableView" customModule="EventMap" customModuleProvider="target">
-                                <rect key="frame" x="20" y="90" width="335" height="426"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uf3-rw-05r" userLabel="registrationFormBalloonContainer" customClass="IBDesignableView" customModule="SFHacks" customModuleProvider="target">
+                                <rect key="frame" x="20" y="110" width="335" height="406"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8b-WD-9D1">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="426"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="406"/>
                                     </containerView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -66,15 +70,15 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gak-W6-n3r" customClass="TriangleView" customModule="EventMap" customModuleProvider="target">
-                                <rect key="frame" x="178" y="516" width="18" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gak-W6-n3r" customClass="TriangleView" customModule="SFHacks" customModuleProvider="target">
+                                <rect key="frame" x="178.5" y="516" width="18" height="30"/>
                                 <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="18" id="acS-mo-VLG"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ziv-SN-mI9" userLabel="markerContainer">
-                                <rect key="frame" x="156.5" y="548" width="61" height="88"/>
+                                <rect key="frame" x="157" y="548" width="61" height="88"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map.marker.commerce" translatesAutoresizingMaskIntoConstraints="NO" id="tV0-9D-0P3">
                                         <rect key="frame" x="0.0" y="0.0" width="61" height="88"/>
@@ -111,6 +115,7 @@
                             <constraint firstItem="Ziv-SN-mI9" firstAttribute="top" secondItem="Gak-W6-n3r" secondAttribute="bottom" constant="2" id="3he-5Q-agE"/>
                             <constraint firstItem="uf3-rw-05r" firstAttribute="top" secondItem="v3d-VW-N3B" secondAttribute="topMargin" constant="90" id="66F-iu-yW8"/>
                             <constraint firstItem="A8C-D0-C11" firstAttribute="bottom" secondItem="ggc-7v-AZm" secondAttribute="bottom" constant="50" id="C7o-xl-YJE"/>
+                            <constraint firstItem="g2s-ZG-4uZ" firstAttribute="leading" secondItem="v3d-VW-N3B" secondAttribute="leading" id="KwR-Y2-f6Y"/>
                             <constraint firstItem="uf3-rw-05r" firstAttribute="leading" secondItem="v3d-VW-N3B" secondAttribute="leading" constant="20" id="O0G-gD-SHo"/>
                             <constraint firstItem="7Eh-ZG-fk3" firstAttribute="centerX" secondItem="v3d-VW-N3B" secondAttribute="centerX" id="OGm-mj-2B3"/>
                             <constraint firstItem="Gak-W6-n3r" firstAttribute="height" secondItem="v3d-VW-N3B" secondAttribute="height" multiplier="30:667" id="Pia-mo-aIg"/>
@@ -121,7 +126,10 @@
                             <constraint firstAttribute="trailing" secondItem="0Py-Ch-T7u" secondAttribute="trailing" id="biZ-Su-Jje"/>
                             <constraint firstItem="Ziv-SN-mI9" firstAttribute="centerX" secondItem="v3d-VW-N3B" secondAttribute="centerX" id="cno-hK-p3K"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="A8C-D0-C11" secondAttribute="trailing" constant="20" id="eBQ-c4-pdf"/>
+                            <constraint firstItem="g2s-ZG-4uZ" firstAttribute="top" secondItem="v3d-VW-N3B" secondAttribute="top" id="ehP-F4-CgI"/>
+                            <constraint firstAttribute="bottom" secondItem="g2s-ZG-4uZ" secondAttribute="bottom" id="f28-E8-gbm"/>
                             <constraint firstItem="A8C-D0-C11" firstAttribute="centerX" secondItem="v3d-VW-N3B" secondAttribute="centerX" id="h1M-7I-VtW"/>
+                            <constraint firstAttribute="trailing" secondItem="g2s-ZG-4uZ" secondAttribute="trailing" id="iSZ-6m-kVq"/>
                             <constraint firstItem="Gak-W6-n3r" firstAttribute="top" secondItem="uf3-rw-05r" secondAttribute="bottom" id="oTr-nL-I4h"/>
                             <constraint firstItem="Gak-W6-n3r" firstAttribute="centerX" secondItem="v3d-VW-N3B" secondAttribute="centerX" id="ovP-st-jOj"/>
                             <constraint firstItem="A8C-D0-C11" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="v3d-VW-N3B" secondAttribute="leading" constant="20" id="oxR-mg-bta"/>
