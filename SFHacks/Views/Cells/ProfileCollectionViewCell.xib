@@ -12,14 +12,33 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.94999999999999996" contentMode="center" reuseIdentifier="ProfileCollectionViewCell" id="gTV-IL-0wX" customClass="ProfileCollectionViewCell" customModule="SFHacks" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eventinfo.visitors.anonymous" translatesAutoresizingMaskIntoConstraints="NO" id="k4d-FY-yDz">
+                        <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="36" id="0Rq-93-mQM"/>
+                            <constraint firstAttribute="height" constant="36" id="Cge-6s-lNd"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
             </view>
-            <color key="backgroundColor" red="1" green="0.034962569579999998" blue="0.046738600470000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="52.799999999999997" y="90.854572713643179"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="k4d-FY-yDz" secondAttribute="trailing" id="Uud-Bd-cck"/>
+                <constraint firstAttribute="bottom" secondItem="k4d-FY-yDz" secondAttribute="bottom" id="mOQ-G0-fN7"/>
+                <constraint firstItem="k4d-FY-yDz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="q40-G5-WWY"/>
+                <constraint firstItem="k4d-FY-yDz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ul7-d4-ccn"/>
+            </constraints>
+            <size key="customSize" width="36" height="36"/>
+            <point key="canvasLocation" x="41.600000000000001" y="84.557721139430285"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="eventinfo.visitors.anonymous" width="298" height="298"/>
+    </resources>
 </document>

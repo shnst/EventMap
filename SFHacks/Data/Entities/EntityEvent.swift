@@ -67,11 +67,35 @@ extension EntityEvent: Mappable {
         }
     
         if let imageArray = map["images"].currentValue as? NSArray {
+            images.removeAll()
             for imageDictionary in imageArray {
                 if let image = imageDictionary as? NSDictionary {
                     let imageEntity = ImageEntity()
                     imageEntity.url = image["image"] as! String
                     images.append(imageEntity)
+                }
+            }
+        }
+        
+        if let participantsArray = map["participants"].currentValue as? NSArray {
+            participants.removeAll()
+            for participant in participantsArray {
+                if let participantDictionary = participant as? NSDictionary {
+                    let entityProfile = EntityProfile()
+                    if let id = participantDictionary["id"] as? Int {
+                        entityProfile.id = id
+                    } else {
+                        continue;
+                    }
+                    if let image = participantDictionary["image"] as? String {
+                        let imageEntity = ImageEntity()
+                        imageEntity.url = image
+                        entityProfile.image = imageEntity
+                    }
+                    if let name = participantDictionary["name"] as? String {
+                        entityProfile.name = name
+                    }
+                    participants.append(entityProfile)
                 }
             }
         }

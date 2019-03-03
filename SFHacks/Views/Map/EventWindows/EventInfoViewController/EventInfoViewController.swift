@@ -67,7 +67,8 @@ class EventInfoViewController: UIViewController {
     private func setupVisitorsCollectionView() {
         visitorsCollectionView.registerCell(ProfileCollectionViewCell.self)
         let flowLayout = visitorsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        flowLayout.estimatedItemSize = CGSize(width: 36, height: 36)
+//        flowLayout.estimatedItemSize = CGSize(width: 36, height: 36)
+//        flowLayout.itemSize = CGSize(width: 36, height: 36)
     }
     
     private func updateUI() {
@@ -111,7 +112,12 @@ class EventInfoViewController: UIViewController {
     }
     
     @IBAction func onVisitButtonTapped(_ sender: UIButton) {
-        joinEvent()
+        let myProfile = ProfileController().getMine()
+        if event.participants.filter({ $0.id == myProfile.id }).count > 0 {
+            // you are already participant
+        } else {
+            joinEvent()
+        }
     }
     
     @IBAction func onCancelButtonTapped(_ sender: UIButton) {
