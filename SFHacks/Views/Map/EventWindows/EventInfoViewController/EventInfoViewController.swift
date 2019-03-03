@@ -69,7 +69,10 @@ class EventInfoViewController: UIViewController {
         eventNameLabel.text = event.name
         descriptionTextView.text = event.description1
 
-        eventImageView.image = event.images.first?.image
+        if let imageUrl = event.images.first?.url {
+            eventImageView.downloaded(from: imageUrl)
+            p("aaa=\(imageUrl)")
+        }
         visitorsCollectionView.reloadData()
     }
     

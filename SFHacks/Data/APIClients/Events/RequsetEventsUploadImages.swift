@@ -13,7 +13,6 @@ func uploadImagesAndData(params:[String : AnyObject]?, images: [UIImage], succes
     let imageData: [Data] = images.map({  $0.jpegData(compressionQuality: 0.5)! })//UIImageJPEGRepresentation($0, 0.5)! })
     
     Alamofire.upload(multipartFormData: { multipartFormData in
-        
         for (key, value) in params! {
             if let data = value.data(using: String.Encoding.utf8.rawValue) {
                 multipartFormData.append(data, withName: key)
@@ -23,24 +22,24 @@ func uploadImagesAndData(params:[String : AnyObject]?, images: [UIImage], succes
             multipartFormData.append(data, withName: "file", fileName: "image.jpg", mimeType: "image/jpeg")
         }
     },
-                     to: kBaseURL + "events/api/register_images/", encodingCompletion: { encodingResult in
-                        switch encodingResult {
-                        case .success(let upload, _, _):
-                            upload
-                                .validate()
-                                .responseJSON { response in
-                                    switch response.result {
-                                    case .success(let value):
-                                        print("responseObject: \(value)")
-                                        success()
-                                    case .failure(let responseError):
-                                        print("responseError: \(responseError)")
-                                        failure()
-                                    }
-                            }
-                        case .failure(let encodingError):
-                            print("encodingError: \(encodingError)")
+         to: kBaseURL + "events/api/register_images/", encodingCompletion: { encodingResult in
+            switch encodingResult {
+            case .success(let upload, _, _):
+                upload
+                    .validate()
+                    .responseJSON { response in
+                        switch response.result {
+                        case .success(let value):
+                            print("responseObject: \(value)")
+                            success()
+                        case .failure(let responseError):
+                            print("responseError: \(responseError)")
                             failure()
                         }
+                }
+            case .failure(let encodingError):
+                print("encodingError: \(encodingError)")
+                failure()
+            }
     })
 }

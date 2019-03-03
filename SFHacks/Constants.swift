@@ -16,4 +16,4 @@ let kGooglePlacesAPIKey = "AIzaSyBXVJ9vbFr8pQA-f8ms-l3lvwR56S8WWAM"
 let kBaseURL = "https://jiffy-development2.herokuapp.com/"
 
 // Model.
-let kMigrationSchemeVersion: UInt64 = 2
+let kMigrationSchemeVersion: UInt64 = 3

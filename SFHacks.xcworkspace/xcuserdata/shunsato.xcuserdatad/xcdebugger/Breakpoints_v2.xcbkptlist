@@ -10,13 +10,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SFHacks/Views/Map/EventWindows/EventInfoViewController/EventInfoViewController.swift"
-            timestampString = "573292955.039166"
+            timestampString = "573300955.27017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "createVisitorsCollectionViewCell(collectionView:indexPath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SFHacks/Views/Map/EventWindows/RegisterEventViewController/RegisterEventViewController.swift"
+            timestampString = "573293440.073542"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "register()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
