@@ -21,8 +21,11 @@ class EventInfoViewController: UIViewController {
     
     @IBOutlet fileprivate weak var visitorsCollectionView: UICollectionView!
     
-    @IBOutlet fileprivate weak var beforeStartingPeriodContainer: UIView!
     @IBOutlet fileprivate weak var eventImageView: UIImageView!
+    
+    @IBOutlet fileprivate weak var startDate: UILabel!
+    @IBOutlet fileprivate weak var endDate: UILabel!
+    
     
     fileprivate var eventImageDownloadStarted: Bool = false
     
@@ -76,6 +79,11 @@ class EventInfoViewController: UIViewController {
             eventImageView.downloaded(from: imageUrl)
             p("aaa=\(imageUrl)")
         }
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MMM dd HH:mm"
+        startDate.text = dateFormatterPrint.string(from: event.startDate)
+        endDate.text = dateFormatterPrint.string(from: event.endDate)
         visitorsCollectionView.reloadData()
     }
     

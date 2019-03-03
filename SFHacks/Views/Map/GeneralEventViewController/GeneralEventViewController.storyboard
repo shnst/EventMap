@@ -223,7 +223,7 @@
                         <outlet property="mapMarkerContainer" destination="Dyg-Yd-hKK" id="c61-tS-E8V"/>
                         <outlet property="tabbarContainer" destination="Khu-Mx-5G3" id="5hj-N9-Nnc"/>
                         <segue destination="AwP-BJ-bpg" kind="presentation" identifier="registerNewEvent" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="4BN-br-1vQ"/>
-                        <segue destination="nhz-dz-jcA" kind="presentation" identifier="seeInformation" modalPresentationStyle="overFullScreen" id="nIK-1X-xYy"/>
+                        <segue destination="nhz-dz-jcA" kind="presentation" identifier="seeInformation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="nIK-1X-xYy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCD-u5-8MZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

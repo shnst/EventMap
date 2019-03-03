@@ -92,7 +92,7 @@ class RegisterEventViewController: UIViewController {
             newEvent.images.append(imageEntity)
         }
         newEvent.startDate = startDatePickerButton.currentDate
-        newEvent.endDate = startDatePickerButton.currentDate
+        newEvent.endDate = endDatePickerButton.currentDate
         newEvent.organizer = ProfileController().getMine()
         
         registerEvent?(newEvent) { [unowned self] in
