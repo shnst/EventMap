@@ -20,7 +20,7 @@ struct RequestEventsFetch : CustomRequest {
     }
     
     var path : String {
-        return "events/api/fetch/"
+        return "events/api/fetch_event/"
     }
     
     var parameters : [String : AnyObject] {

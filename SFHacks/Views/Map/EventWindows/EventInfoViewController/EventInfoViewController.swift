@@ -22,7 +22,6 @@ class EventInfoViewController: UIViewController {
     @IBOutlet fileprivate weak var visitorsCollectionView: UICollectionView!
     
     @IBOutlet fileprivate weak var beforeStartingPeriodContainer: UIView!
-//    @IBOutlet fileprivate weak var afterStartingPeriodContainer: RemainingTimeView!
     @IBOutlet fileprivate weak var eventImageView: UIImageView!
     
     override func viewDidLoad() {
@@ -61,17 +60,17 @@ class EventInfoViewController: UIViewController {
     }
     
     private func setupVisitorsCollectionView() {
-//        visitorsCollectionView.registerCell(ProfileCollectionViewCell.self)
-//        let flowLayout = visitorsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-//        flowLayout.estimatedItemSize = CGSize(width: 36, height: 36)
+        visitorsCollectionView.registerCell(ProfileCollectionViewCell.self)
+        let flowLayout = visitorsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        flowLayout.estimatedItemSize = CGSize(width: 36, height: 36)
     }
     
     private func updateUI() {
-//        eventNameLabel.text = event.name
-//        descriptionTextView.text = event.description1
-//
-//        eventImageView.image = event.images.first?.image
-//        visitorsCollectionView.reloadData()
+        eventNameLabel.text = event.name
+        descriptionTextView.text = event.description1
+
+        eventImageView.image = event.images.first?.image
+        visitorsCollectionView.reloadData()
     }
     
     private func joinEvent() {
@@ -91,8 +90,8 @@ class EventInfoViewController: UIViewController {
                 AlertManager.showConnectionErrorAlertWithMessage(
                     title: error != nil ? error!.description : localizedString("通信エラー"),
                     retryTask: { [weak self] in
-                        //                        guard let sself = self else { return }
-                        //                        sself.joinEvent()
+                        guard let sself = self else { return }
+                        sself.joinEvent()
                 })
         })
     }

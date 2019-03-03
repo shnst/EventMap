@@ -140,3 +140,17 @@ extension RegisterEventViewController: UIImagePickerControllerDelegate {
 extension RegisterEventViewController: UINavigationControllerDelegate {
     
 }
+
+extension RegisterEventViewController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return false
+    }
+}
+
+//extension RegisterEventViewController : UITextViewDelegate {
+//    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+//        view.endEditing(true)
+//        return true
+//    }
+//}

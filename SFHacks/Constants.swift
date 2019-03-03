@@ -12,8 +12,8 @@ let kGoogleMapsAPIKey = "AIzaSyBXVJ9vbFr8pQA-f8ms-l3lvwR56S8WWAM"
 let kGooglePlacesAPIKey = "AIzaSyBXVJ9vbFr8pQA-f8ms-l3lvwR56S8WWAM"
 //let kGooglePlacesAPIKey = "AIzaSyAIL2PFJxosaENcXMTb74OnIGsXQSHa1lE"
 
-//let kBaseURL = "http://127.0.0.1:8000/"
-let kBaseURL = "https://jiffy-development.herokuapp.com/"
+//let kBaseURL = "http://192.168.43.223:8000/"
+let kBaseURL = "https://jiffy-development2.herokuapp.com/"
 
 // Model.
 let kMigrationSchemeVersion: UInt64 = 2
