@@ -36,10 +36,6 @@
 		B16E63E5222B1A8A00788B3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16E63E4222B1A8A00788B3E /* Assets.xcassets */; };
 		B16E63F3222B1C8800788B3E /* EntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16E63F2222B1C8800788B3E /* EntranceViewController.swift */; };
 		B16E63F5222B1C9800788B3E /* EntranceViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16E63F4222B1C9800788B3E /* EntranceViewController.storyboard */; };
-		B16E63F7222B1D6600788B3E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16E63F6222B1D6600788B3E /* SignInViewController.swift */; };
-		B16E63F9222B1DBB00788B3E /* SignInViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16E63F8222B1DBB00788B3E /* SignInViewController.storyboard */; };
-		B16E63FC222B1EBC00788B3E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16E63FB222B1EBC00788B3E /* SignUpViewController.swift */; };
-		B16E63FE222B1EEC00788B3E /* SignUpViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16E63FD222B1EEC00788B3E /* SignUpViewController.storyboard */; };
 		B16E6401222B1FA000788B3E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16E6400222B1FA000788B3E /* MapViewController.swift */; };
 		B16E6403222B1FAD00788B3E /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16E6402222B1FAD00788B3E /* MapViewController.storyboard */; };
 		B16E6409222B248B00788B3E /* ClassExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16E6405222B248B00788B3E /* ClassExtensions.swift */; };
@@ -106,10 +102,6 @@
 		B16E63E9222B1A8A00788B3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B16E63F2222B1C8800788B3E /* EntranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceViewController.swift; sourceTree = "<group>"; };
 		B16E63F4222B1C9800788B3E /* EntranceViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EntranceViewController.storyboard; sourceTree = "<group>"; };
-		B16E63F6222B1D6600788B3E /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		B16E63F8222B1DBB00788B3E /* SignInViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInViewController.storyboard; sourceTree = "<group>"; };
-		B16E63FB222B1EBC00788B3E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		B16E63FD222B1EEC00788B3E /* SignUpViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpViewController.storyboard; sourceTree = "<group>"; };
 		B16E6400222B1FA000788B3E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B16E6402222B1FAD00788B3E /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
 		B16E6405222B248B00788B3E /* ClassExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassExtensions.swift; sourceTree = "<group>"; };
@@ -301,24 +293,6 @@
 			path = EntranceViewController;
 			sourceTree = "<group>";
 		};
-		B16E63F0222B1C3200788B3E /* SignInViewController */ = {
-			isa = PBXGroup;
-			children = (
-				B16E63F6222B1D6600788B3E /* SignInViewController.swift */,
-				B16E63F8222B1DBB00788B3E /* SignInViewController.storyboard */,
-			);
-			path = SignInViewController;
-			sourceTree = "<group>";
-		};
-		B16E63FA222B1EAA00788B3E /* SignUpViewController */ = {
-			isa = PBXGroup;
-			children = (
-				B16E63FB222B1EBC00788B3E /* SignUpViewController.swift */,
-				B16E63FD222B1EEC00788B3E /* SignUpViewController.storyboard */,
-			);
-			path = SignUpViewController;
-			sourceTree = "<group>";
-		};
 		B16E63FF222B1F5600788B3E /* MapViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,8 +340,6 @@
 		B16E6418222B2FFA00788B3E /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				B16E63FA222B1EAA00788B3E /* SignUpViewController */,
-				B16E63F0222B1C3200788B3E /* SignInViewController */,
 				B16E63EF222B1B4900788B3E /* EntranceViewController */,
 			);
 			path = Authorization;
@@ -518,13 +490,11 @@
 				B1429575222B6A2B008871D0 /* EventInfoViewController.storyboard in Resources */,
 				B16E640E222B264A00788B3E /* LaunchScreen.storyboard in Resources */,
 				B1429561222B4059008871D0 /* EventWindowViewController.storyboard in Resources */,
-				B16E63F9222B1DBB00788B3E /* SignInViewController.storyboard in Resources */,
 				B16E641E222B304300788B3E /* MarkerView.xib in Resources */,
 				B1429555222B3CE3008871D0 /* MapBrowserViewController.storyboard in Resources */,
 				B16E63F5222B1C9800788B3E /* EntranceViewController.storyboard in Resources */,
 				B1429584222B89F8008871D0 /* ProfileCollectionViewCell.xib in Resources */,
 				B16E63E5222B1A8A00788B3E /* Assets.xcassets in Resources */,
-				B16E63FE222B1EEC00788B3E /* SignUpViewController.storyboard in Resources */,
 				B16E6403222B1FAD00788B3E /* MapViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,7 +581,6 @@
 				B16E6442222B34E200788B3E /* RequestEventsAddToWishList.swift in Sources */,
 				B16E6441222B34E200788B3E /* RequsetEventsFetchWishList.swift in Sources */,
 				B16E6412222B2AC700788B3E /* ScreenTransitionManager.swift in Sources */,
-				B16E63F7222B1D6600788B3E /* SignInViewController.swift in Sources */,
 				B16E6448222B34E900788B3E /* RequestUsersSignUpEmail.swift in Sources */,
 				B142956E222B6847008871D0 /* RegisterEventViewController.swift in Sources */,
 				B142957C222B6E2A008871D0 /* DatePickerButton.swift in Sources */,
@@ -648,7 +617,6 @@
 				B16E641D222B304300788B3E /* MarkerView.swift in Sources */,
 				B142954E222B3B4B008871D0 /* EventGenre.swift in Sources */,
 				B1429580222B86A4008871D0 /* EventController.swift in Sources */,
-				B16E63FC222B1EBC00788B3E /* SignUpViewController.swift in Sources */,
 				B1429560222B4059008871D0 /* EventWindowViewController.swift in Sources */,
 				B1429563222B41E1008871D0 /* MapAccessor.swift in Sources */,
 				B1429573222B6A21008871D0 /* EventInfoViewController.swift in Sources */,
@@ -783,13 +751,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ATL3QJQM9;
+				DEVELOPMENT_TEAM = HMYUSX23U3;
 				INFOPLIST_FILE = SFHacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shunsato93.EventMap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.patkhai.eventMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -802,13 +770,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ATL3QJQM9;
+				DEVELOPMENT_TEAM = HMYUSX23U3;
 				INFOPLIST_FILE = SFHacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shunsato93.EventMap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.patkhai.eventMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
