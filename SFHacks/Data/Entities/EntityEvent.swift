@@ -65,6 +65,16 @@ extension EntityEvent: Mappable {
         if let dateString = map["end_at"].currentValue as? String {
             endDate = Date.formatDateFromString(dateString)
         }
+    
+        if let imageArray = map["images"].currentValue as? NSArray {
+            for imageDictionary in imageArray {
+                if let image = imageDictionary as? NSDictionary {
+                    let imageEntity = ImageEntity()
+                    imageEntity.url = image["image"] as! String
+                    images.append(imageEntity)
+                }
+            }
+        }
         
         p("EntityEvent startDate=\(startDate) endDate=\(endDate) json=\(map.JSON)")
         
@@ -99,6 +109,7 @@ class ImageEntity: Object {
             return nil
         }
     }
+    @objc dynamic var url: String = ""
     @objc dynamic private var _image: UIImage? = nil
     @objc dynamic private var imageData: Data? = nil
     
